@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito+Sans:wght@300;400;600&display=swap');
+
 /*
 ! tailwindcss v3.1.3 | MIT License | https://tailwindcss.com
 */
@@ -417,7 +419,7 @@ video {
   height: auto;
 }
 
-*, ::before, ::after {
+*, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -464,7 +466,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::-webkit-backdrop {
+::-webkit-backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -511,7 +513,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop {
+::backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -558,6 +560,19 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.flex {
+.flex{
   display: flex;
 }
+
+.font-kaushan{
+  font-family: Kaushan Script;
+}
+
+.font-nunito{
+  font-family: Nunito Sans;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+

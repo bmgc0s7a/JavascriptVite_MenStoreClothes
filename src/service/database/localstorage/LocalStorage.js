@@ -38,7 +38,6 @@ class LocalStorage {
             } else {
                 dataValues.push(value);
             }
-            this.delAll(key);
             window.localStorage.setItem(key, JSON.stringify(dataValues));
         } catch (error) {
             //! Changing Div Error

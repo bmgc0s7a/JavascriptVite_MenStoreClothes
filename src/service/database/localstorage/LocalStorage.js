@@ -4,6 +4,19 @@ import LocalStorageVerifyKey from "../../../validators/database/localstorage/Loc
 import LocalStorageUniqueKey from "../../../validators/database/localstorage/LocaStorageUniqueKey";
 
 class LocalStorage {
+
+   static #validateKeyAndItemExists(key, obj, attr){
+        LocalStorageInvalidKey.exec(key);
+        const dataKey = this.get(key);
+        const dataIndex = dataKey.findIndex(dataOne => dataOne[attr] === obj[attr]);
+        LocalStorageNotFoundItem.exec(key, dataIndex);
+        return [dataKey, dataIndex];    
+   } 
+
+   static #reAddAllKeyWithValues(key, dataKey){
+        this.delAll(key);
+        dataKey.forEach(dataOne => this.add(key, dataOne));
+   }
     
     static get(key){
         try{
@@ -35,27 +48,20 @@ class LocalStorage {
 
     static upd(key, obj, attr = 'id'){
         try {
-            LocalStorageInvalidKey.exec(key);
-            const dataKey = this.get(key);
-            const dataIndex = dataKey.findIndex(dataOne => dataOne[attr] === obj[attr]);
-            LocalStorageNotFoundItem.exec(key, dataIndex);
+            const [dataKey, dataIndex] = this.#validateKeyAndItemExists(key, obj, attr);
             dataKey[dataIndex] = obj;
-            this.delAll(key);
-            dataKey.forEach(dataOne => this.add(key, dataOne));
+            this.#reAddAllKeyWithValues(key, dataKey);
         } catch (error) {
             //! Changing Div Error
             console.log(error);
         }
     }
 
-    static del(key, obj){
+    static del(key, obj, attr = 'id'){
         try {
-            LocalStorageVerifyKey.exec(key);
-            const dataKey = this.get(key);
-            const dataIndex = dataKey.findIndex(dataOne => dataOne === obj);
+            const [dataKey, dataIndex] = this.#validateKeyAndItemExists(key, obj, attr);
             dataKey.splice(dataIndex, 1);
-            this.delAll(key);
-            dataKey.forEach(dataOne => this.add(key, dataOne));
+            this.#reAddAllKeyWithValues(key, dataKey);
         } catch (error) {
             //! Changing Div Error
             console.log(error);

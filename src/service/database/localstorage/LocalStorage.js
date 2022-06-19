@@ -23,8 +23,7 @@ class LocalStorage {
             LocalStorageInvalidKey.exec(key);
             return JSON.parse(window.localStorage.getItem(key));
         } catch (error) {
-            //! Changing Div Error
-            console.log(error);
+            throw error;
         }
     }
 
@@ -40,8 +39,7 @@ class LocalStorage {
             }
             window.localStorage.setItem(key, JSON.stringify(dataValues));
         } catch (error) {
-            //! Changing Div Error
-            console.log(error);
+            throw error;
         }
     }
 
@@ -51,8 +49,7 @@ class LocalStorage {
             dataKey[dataIndex] = obj;
             this.#reAddAllKeyWithValues(key, dataKey);
         } catch (error) {
-            //! Changing Div Error
-            console.log(error);
+            throw error;
         }
     }
 
@@ -62,8 +59,7 @@ class LocalStorage {
             dataKey.splice(dataIndex, 1);
             this.#reAddAllKeyWithValues(key, dataKey);
         } catch (error) {
-            //! Changing Div Error
-            console.log(error);
+            throw error;
         }
     }
 
@@ -72,8 +68,7 @@ class LocalStorage {
             LocalStorageVerifyKey.exec(key);
             window.localStorage.removeItem(key);
         } catch (error) {
-            //! Changing Div Error
-            console.log(error);
+            throw error;
         }
     }
 }

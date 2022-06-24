@@ -1,5 +1,7 @@
 import EmptyDataModel from "../../validators/model/products/EmptyDataModel"
+import NotIsANumber from "../../validators/model/products/NotIsANumber"
 import NotNumberZeroAndNegative from "../../validators/model/products/NotNumberZeroAndNegative"
+not
 
 class Product {
     #id
@@ -8,7 +10,7 @@ class Product {
     #price
     #rate
 
-    constructor(id, title, desc, price, rate) {
+    constructor(id, title, desc, price, rate = 0) {
         this.#id = id;
         this.#title = title;
         this.#desc = desc;
@@ -39,6 +41,7 @@ class Product {
     set id(id) {
         try {
             EmptyDataModel.exec(id);
+            NotIsANumber.exec(id);
             NotNumberZeroAndNegative.exec(id);
             this.#id = id;  
         } catch (error) {
@@ -67,6 +70,7 @@ class Product {
     set price(price) {
         try {
             EmptyDataModel.exec(price);
+            NotIsANumber.exec(id);
             NotNumberZeroAndNegative.exec(price);
             this.#desc = title;
         } catch (error) {
@@ -77,10 +81,13 @@ class Product {
     set rate(rate) {
         try {
             EmptyDataModel.exec(rate);
-            NotNumberZeroAndNegative.exec(rate);
+            NotIsANumber.exec(rate);
+            NotNumberNegative.exec(rate);
             this.#rate = rate;
         } catch (error) {
             throw error;
         }
     }
 }
+
+export default Product;

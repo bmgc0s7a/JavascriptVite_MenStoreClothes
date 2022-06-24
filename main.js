@@ -1,4 +1,5 @@
 import './src/css/output.css'
+import '@fortawesome/fontawesome-free/js/all'
 
 document.querySelector('#app').innerHTML = `
   <h1>Hello Vite!</h1>

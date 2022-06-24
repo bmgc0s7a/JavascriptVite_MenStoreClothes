@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="font-nunito">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app" class="flex">
-      <div id="shop" class="flex"></div>
-      <div id="cart" class="flex"></div>
-      <div id="contact" class="flex"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app" class="flex">
+    <div id="shop" class="flex"></div>
+    <div id="cart" class="flex"></div>
+    <div id="contact" class="flex"></div>
+  </div>
+  <div class="footer bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
+    <div class="logo-footer none hidden sm:block">
+      <p class="font-kaushan line-through">BOTIQUE BUSHIDO </p>
     </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <div class="social-icons text-2xl text-amber-100 flex gap-3 ">
+      <a href="#"> <i class="fa-brands fa-facebook-square hover:text-amber-300 ease-in duration-150"></i> </a>
+      <a href="#"> <i class="fa-brands fa-twitter-square hover:text-amber-300 ease-in duration-150"></i> </a>
+      <a href="#"> <i class="fa-solid fa-square-rss hover:text-amber-300 ease-in duration-150"></i> </a>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

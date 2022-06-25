@@ -7,6 +7,7 @@ import NumberBetween from "../../validators/model/products/NumberBetween"
 class Product {
     #id
     #title
+    #image
     #desc
     #price
     #rate
@@ -21,6 +22,10 @@ class Product {
 
     get title() {
         return this.#title;
+    }
+
+    get image() {
+        return this.#image;
     }
 
     get desc() {
@@ -52,6 +57,15 @@ class Product {
             this.#title = title;
         } catch (error) {
             throw error;
+        }
+    }
+
+    set image(image) {
+        try {
+            EmptyDataModel.exec('Image',image);
+            this.#image = image;
+        } catch (error) {
+            throw error
         }
     }
 

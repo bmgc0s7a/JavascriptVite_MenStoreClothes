@@ -2,10 +2,10 @@ import NotNumberNegative from "./NotNumberNegative";
 
 class NotNumberZeroAndNegative{
 
-    static exec(data){
+    static exec(atrr, data){
         try{
             if(data == 0 && NotNumberNegative.exec(data))
-                throw new Error(`${data} can't be 0`);
+                throw new Error(`PRODUCT: ${attr} can't be 0`);
         } catch(e){
             throw e;
         }

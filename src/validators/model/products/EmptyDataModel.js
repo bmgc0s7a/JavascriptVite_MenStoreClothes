@@ -1,8 +1,8 @@
 class EmptyDataModel{
 
-    static exec(data){
-        if(!data)
-            throw new Error(`${data} can't be empty!`);
+    static exec(attr, data){
+        if(!String(data).length)
+            throw new Error(`PRODUCT: ${attr} can't be empty!`);
     }
 }
 

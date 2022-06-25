@@ -1,8 +1,8 @@
 class NotIsANumber{
 
-    static exec(data){
+    static exec(attr, data){
         if(!isFinite(data))
-            throw new Error(`${data} not a number!`);
+            throw new Error(`PRODUCT: ${attr} must be a number!`);
     }
 }
 

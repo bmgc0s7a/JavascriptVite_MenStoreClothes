@@ -580,30 +580,8 @@ video {
   justify-content: center;
 }
 
-.justify-between{
-  justify-content: space-between;
-}
-
-.gap-2{
-  gap: 0.5rem;
-}
-
-.gap-5{
-  gap: 1.25rem;
-}
-
 .gap-3{
   gap: 0.75rem;
-}
-
-.bg-amber-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(120 53 15 / var(--tw-bg-opacity));
-}
-
-.bg-amber-700{
-  --tw-bg-opacity: 1;
-  background-color: rgb(180 83 9 / var(--tw-bg-opacity));
 }
 
 .bg-amber-800{
@@ -611,46 +589,9 @@ video {
   background-color: rgb(146 64 14 / var(--tw-bg-opacity));
 }
 
-.bg-amber-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 119 6 / var(--tw-bg-opacity));
-}
-
-.bg-amber-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
-}
-
-.bg-amber-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 243 199 / var(--tw-bg-opacity));
-}
-
-.p-2{
-  padding: 0.5rem;
-}
-
-.p-5{
-  padding: 1.25rem;
-}
-
-.p-4{
-  padding: 1rem;
-}
-
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 
 .px-16{
@@ -664,11 +605,6 @@ video {
 
 .font-kaushan{
   font-family: Kaushan Script;
-}
-
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-2xl{
@@ -686,14 +622,6 @@ video {
           text-decoration-line: line-through;
 }
 
-.duration-300{
-  transition-duration: 300ms;
-}
-
-.duration-200{
-  transition-duration: 200ms;
-}
-
 .duration-150{
   transition-duration: 150ms;
 }
@@ -702,62 +630,22 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.hover\:text-amber-200:hover{
-  --tw-text-opacity: 1;
-  color: rgb(253 230 138 / var(--tw-text-opacity));
-}
-
 .hover\:text-amber-300:hover{
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity));
 }
 
-@media (min-width: 640px){
-  .sm\:visible{
-    visibility: visible;
-  }
+.hover\:text-amber-800:hover{
+  --tw-text-opacity: 1;
+  color: rgb(146 64 14 / var(--tw-text-opacity));
+}
 
+@media (min-width: 640px){
   .sm\:block{
     display: block;
   }
 
-  .sm\:flex{
-    display: flex;
-  }
-
-  .sm\:inline-flex{
-    display: inline-flex;
-  }
-
   .sm\:justify-between{
-    justify-content: space-between;
-  }
-
-  .sm\:justify-evenly{
-    justify-content: space-evenly;
-  }
-}
-
-@media (min-width: 768px){
-  .md\:block{
-    display: block;
-  }
-
-  .md\:justify-between{
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 1024px){
-  .lg\:block{
-    display: block;
-  }
-
-  .lg\:w-48{
-    width: 12rem;
-  }
-
-  .lg\:justify-between{
     justify-content: space-between;
   }
 }

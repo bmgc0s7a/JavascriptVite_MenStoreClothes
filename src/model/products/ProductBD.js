@@ -3,12 +3,8 @@ import ProductJSON from "./ProductJSON";
 
 class ProductBD{
 
-    static get(){
-        try{
-            return ProductService.get();
-        } catch (e){
-            throw e;
-        }
+    static async get(){
+        return await ProductService.get();
     }
 
     static save(productInstance){

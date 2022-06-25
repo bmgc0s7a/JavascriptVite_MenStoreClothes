@@ -8,6 +8,7 @@ class ProductJSON{
             return {
                 id: product.id,
                 title: product.title,
+                image: product.image,
                 desc: product.desc,
                 price: product.price,
                 rate: product.rate
@@ -15,7 +16,6 @@ class ProductJSON{
         } catch (e){
             throw e;
         }
-        //if(product)
     }
 }
 

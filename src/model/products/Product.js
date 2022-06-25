@@ -1,7 +1,8 @@
 import EmptyDataModel from "../../validators/model/products/EmptyDataModel"
 import NotIsANumber from "../../validators/model/products/NotIsANumber"
+import NotNumberNegative from "../../validators/model/products/NotNumberNegative"
 import NotNumberZeroAndNegative from "../../validators/model/products/NotNumberZeroAndNegative"
-not
+import NumberBetween from "../../validators/model/products/NumberBetween"
 
 class Product {
     #id
@@ -11,11 +12,7 @@ class Product {
     #rate
 
     constructor(id, title, desc, price, rate = 0) {
-        this.#id = id;
-        this.#title = title;
-        this.#desc = desc;
-        this.#price = price;
-        this.#rate = rate;
+        Object.assign(this, {id, title, desc, price, rate});
     }
 
     get id() {
@@ -40,9 +37,9 @@ class Product {
 
     set id(id) {
         try {
-            EmptyDataModel.exec(id);
-            NotIsANumber.exec(id);
-            NotNumberZeroAndNegative.exec(id);
+            EmptyDataModel.exec('ID',id);
+            NotIsANumber.exec('ID', id);
+            NotNumberZeroAndNegative.exec('ID', id);
             this.#id = id;  
         } catch (error) {
             throw error;
@@ -51,7 +48,7 @@ class Product {
 
     set title(title) {
         try {
-            EmptyDataModel.exec(title);
+            EmptyDataModel.exec('Title',title);
             this.#title = title;
         } catch (error) {
             throw error;
@@ -60,7 +57,7 @@ class Product {
 
     set desc(desc) {
         try {
-            EmptyDataModel.exec(desc);
+            EmptyDataModel.exec('Description',desc);
             this.#desc = desc;
         } catch (error) {
             throw error;
@@ -69,10 +66,10 @@ class Product {
 
     set price(price) {
         try {
-            EmptyDataModel.exec(price);
-            NotIsANumber.exec(id);
-            NotNumberZeroAndNegative.exec(price);
-            this.#desc = title;
+            EmptyDataModel.exec('Price', price);
+            NotIsANumber.exec('Price', price);
+            NotNumberZeroAndNegative.exec('Price', price);
+            this.#price = price;
         } catch (error) {
             throw error;
         }
@@ -80,9 +77,10 @@ class Product {
 
     set rate(rate) {
         try {
-            EmptyDataModel.exec(rate);
-            NotIsANumber.exec(rate);
-            NotNumberNegative.exec(rate);
+            EmptyDataModel.exec('Rate', rate);
+            NotIsANumber.exec('Rate' ,rate);
+            NotNumberNegative.exec('Rate', rate);
+            NumberBetween.exec('Rate', rate);
             this.#rate = rate;
         } catch (error) {
             throw error;

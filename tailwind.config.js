@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         'nunito' : 'Nunito Sans',
         'kaushan' : 'Kaushan Script'
+      },
+      translate: {
+        '-2/4': '-50%',
       }
     },
   },

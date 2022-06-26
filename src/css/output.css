@@ -572,6 +572,10 @@ video {
   display: none;
 }
 
+.h-40{
+  height: 10rem;
+}
+
 .items-center{
   align-items: center;
 }
@@ -633,11 +637,6 @@ video {
 .hover\:text-amber-300:hover{
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity));
-}
-
-.hover\:text-amber-800:hover{
-  --tw-text-opacity: 1;
-  color: rgb(146 64 14 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){

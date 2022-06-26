@@ -1,7 +1,17 @@
 import './src/css/output.css'
 import '@fortawesome/fontawesome-free/js/all'
+import { renderPages } from './src/view/renderPages';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+const pagesDiv = {
+  'shop': document.querySelector('#shop'),
+  'aboutUS': document.querySelector('#aboutUs'),
+  'contact': document.querySelector('#contact')
+};
+
+document.addEventListener('insertPage', function(e){ 
+  e.detail.elements.forEach(element => pagesDiv[e.detail.div].append(element)); 
+});
+
+renderPages();
+
+console.log(pagesDiv);

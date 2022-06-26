@@ -12,8 +12,8 @@ class Product {
     #price
     #rate
 
-    constructor(id, title, desc, price, rate = 0) {
-        Object.assign(this, {id, title, desc, price, rate});
+    constructor({id, title, image, desc, price, rate = 0}) {
+        Object.assign(this, {id, title, image, desc, price, rate});
     }
 
     get id() {

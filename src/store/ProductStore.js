@@ -46,8 +46,7 @@ class ProductStore {
         try {
             const productToChange = this.get(id);
             productToChange[property] = value;
-            ProductBD.update(productToChange);
-            
+            ProductBD.update(productToChange);          
         } catch (e) {
             throw e;
         }

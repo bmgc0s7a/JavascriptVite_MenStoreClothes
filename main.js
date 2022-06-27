@@ -5,7 +5,8 @@ import { renderPages } from './src/view/renderPages';
 const pagesDiv = {
   'shop': document.querySelector('#shop'),
   'aboutUS': document.querySelector('#aboutUs'),
-  'contact': document.querySelector('#contact')
+  'contact': document.querySelector('#contact'),
+  'cart': document.querySelector('#cart')
 };
 
 document.addEventListener('insertPage', function(e){ 

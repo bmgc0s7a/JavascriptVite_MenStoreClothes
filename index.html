@@ -16,16 +16,16 @@
 
 <body>
   <div class="bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
-    <ul class="fixed left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
-      <li class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+    <ul id="menu" class="fixed left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
+      <li id="shopMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-bag-shopping"></i>
         <h6 class="text-black hidden lg:block">Shop</h6>
       </li>
-      <li class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+      <li id="aboutUsMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-building"></i>
         <h6 class="text-black hidden lg:block">About Us</h6>
       </li>
-      <li class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+      <li id="contactMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-square-phone"></i>
         <h6 class="text-black hidden lg:block">Contact</h6>
       </li>
@@ -37,8 +37,8 @@
       <a href="#"> <i class="fa-solid fa-square-rss hover:text-amber-300 ease-in duration-150"></i> </a>
     </div>
   </div>
-  <div id="app" class="flex">
-    <div id="shop" class="flex"></div>
+  <div id="app">
+    <div id="shop"></div>
     <div id="aboutUs" class="hidden"></div>
     <div id="contact" class="hidden"></div>
   </div>

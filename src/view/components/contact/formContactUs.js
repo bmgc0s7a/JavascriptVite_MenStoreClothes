@@ -1,5 +1,5 @@
-import { input } from "./widgets/input.js";
-import { textarea } from "./widgets/textarea.js";
+import { input } from "../widgets/input.js";
+import { textarea } from "../widgets/textarea.js";
 
 const formContactUs = function(){
     const form = document.createElement('form')

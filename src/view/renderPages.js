@@ -26,6 +26,15 @@ const renderPages = function(){
         }
     }
     ));
+
+    document.dispatchEvent(new CustomEvent('insertPage', 
+    {
+        detail: {
+            div: 'cart',
+            elements: ['<p>Cart</p>']
+        }
+    }
+    ));
 }
 
 export {renderPages};

@@ -34,7 +34,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: [h1('CURRENT SHOPPING CART',['font-kaushan'])]
+            elements: [h1()]
         }
     }
     ));

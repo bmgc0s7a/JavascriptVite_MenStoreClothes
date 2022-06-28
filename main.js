@@ -6,7 +6,7 @@ const pagesDiv = {
   'shop': document.querySelector('#shop'),
   'aboutUS': document.querySelector('#aboutUs'),
   'contact': document.querySelector('#contact'),
-  'cart': document.querySelector('#cart')
+  'cart': document.querySelector('#cart'),
 };
 
 document.addEventListener('insertPage', function(e){ 

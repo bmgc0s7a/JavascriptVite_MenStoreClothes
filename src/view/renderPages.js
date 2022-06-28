@@ -1,3 +1,5 @@
+import { h1 } from "./components/cart/h1.js";
+
 const renderPages = function(){
 
     document.dispatchEvent(new CustomEvent('insertPage', 
@@ -31,7 +33,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: ['<p>Cart</p>']
+            elements: [h1('CURRENT SHOPPING CART',['font-kaushan'])]
         }
     }
     ));

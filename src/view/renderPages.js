@@ -1,4 +1,3 @@
-import { h1 } from "./components/cart/h1.js";
 import { ContactUs } from "./components/contact/contactUs.js";
 
 const renderPages = function(){
@@ -34,7 +33,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: [h1()]
+            elements: []
         }
     }
     ));

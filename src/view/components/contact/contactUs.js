@@ -1,4 +1,4 @@
-import { h1 } from "../cart/h1.js"
+import { h1 } from "../widgets/h1.js";
 import { formMapAddress } from "./formMapAddress.js"
 
 function ContactUs() {

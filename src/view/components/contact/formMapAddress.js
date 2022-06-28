@@ -1,0 +1,18 @@
+import { mapContactUs } from "./mapContactUs.js";
+import { formContactUs } from "./formContactUs.js";
+import { p } from "../widgets/p.js";
+
+function formMapAddress() {
+    const divMapForm = document.createElement('div')
+    divMapForm.classList.add("flex","flex-col-reverse", "sm:flex-row", "map", "mapContact", "my-8", "justify-center",  "bg-amber-100" )
+    divMapForm.id = 'map'
+
+    divMapForm.append(
+        formContactUs(),
+        p('map')
+    )
+
+    return divMapForm
+}
+
+export { formMapAddress }

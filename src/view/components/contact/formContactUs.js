@@ -7,10 +7,10 @@ const formContactUs = function(){
     const form = document.createElement('form')
     form.classList.add("formContact", "flex", "flex-col", "my-2", "mx-2")
     form.append(
-        input('text', 'firstName', 'First Name', ["bg-amber-300", "text-black", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
-        input('email','email', 'Email', ["bg-amber-300", "text-black", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
-        textarea(4,50, 'textarea','write your message here', ["bg-amber-300", "text-black", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
-        input('submit','submit', 'send', ["bg-amber-300", "hover:bg-amber-900","text-black","hover:text-white","hover:cursor-pointer", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" , "mx-20"]),
+        input('text', 'firstName', 'First Name', ["bg-amber-300", "text-amber-900", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
+        input('email','email', 'Email', ["bg-amber-300", "text-amber-900", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
+        textarea(4,50, 'textarea','write your message here', ["bg-amber-300", "text-amber-900", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" ]),
+        input('submit','submit', 'send', ["bg-amber-300", "hover:bg-amber-900","text-amber-900","hover:text-white","hover:cursor-pointer", "rounded-md", "mb-2" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50" , "mx-20"]),
     );
 
 

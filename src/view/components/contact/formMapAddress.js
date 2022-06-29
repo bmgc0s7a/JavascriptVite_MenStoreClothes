@@ -8,7 +8,7 @@ function formMapAddress() {
 
     divMapForm.append(
         formContactUs(),
-        p('map')
+        mapContactUs()
     )
 
     return divMapForm

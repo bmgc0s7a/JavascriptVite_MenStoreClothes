@@ -1,3 +1,7 @@
+import { ContactUs } from "./components/contact/contactUs.js";
+import { title } from "./components/cart/title.js";
+import { itemCart } from "./components/cart/itemCart.js";
+
 const renderPages = function(){
 
     document.dispatchEvent(new CustomEvent('insertPage', 
@@ -22,7 +26,16 @@ const renderPages = function(){
     {
         detail: {
             div: 'contact',
-            elements: ['<p>Contact</p>']
+            elements: [ContactUs()]
+        }
+    }
+    ));
+
+    document.dispatchEvent(new CustomEvent('insertPage', 
+    {
+        detail: {
+            div: 'cart',
+            elements: [title(),itemCart()]
         }
     }
     ));

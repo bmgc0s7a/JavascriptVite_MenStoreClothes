@@ -1,5 +1,6 @@
 import { ContactUs } from "./components/contact/contactUs.js";
 import { title } from "./components/cart/title.js";
+import { itemCart } from "./components/cart/itemCart.js";
 
 const renderPages = function(){
 
@@ -34,7 +35,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: [title()]
+            elements: [title(),itemCart()]
         }
     }
     ));

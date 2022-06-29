@@ -600,9 +600,9 @@ video {
   margin-right: 2rem;
 }
 
-.my-8{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.my-3{
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .ml-4{
@@ -757,6 +757,10 @@ video {
 
 .p-6{
   padding: 1.5rem;
+}
+
+.p-10{
+  padding: 2.5rem;
 }
 
 .p-5{

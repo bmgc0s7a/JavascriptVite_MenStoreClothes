@@ -1,6 +1,7 @@
 import { ContactUs } from "./components/contact/contactUs.js";
 import { title } from "./components/cart/title.js";
 import { itemCart } from "./components/cart/itemCart.js";
+import { sloganContact } from "./components/contact/sloganContact.js";
 
 const renderPages = function(){
 
@@ -26,7 +27,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'contact',
-            elements: [ContactUs()]
+            elements: [sloganContact(), ContactUs()]
         }
     }
     ));

@@ -4,6 +4,7 @@ import { itemCart } from "./components/cart/itemCart.js";
 import { sloganContact } from "./components/contact/sloganContact.js";
 import { cardShop } from "./components/shop/card.js";
 import { formCoupon } from "./components/cart/coupon.js";
+import { Payment } from "./components/cart/payment.js";
 
 const renderPages = function(){
 
@@ -38,7 +39,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: [title(),itemCart(),formCoupon()]
+            elements: [title(),itemCart(),formCoupon(),Payment()]
         }
     }
     ));

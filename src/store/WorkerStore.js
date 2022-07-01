@@ -17,7 +17,6 @@ class WorkerStore {
     
     static #add(objWorker){
         const newWorkerInstance = new Worker(objWorker);
-        console.log(newWorkerInstance);
         this.#workers.push(newWorkerInstance);
         return newWorkerInstance;
     }

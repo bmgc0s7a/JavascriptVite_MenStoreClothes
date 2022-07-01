@@ -2,7 +2,7 @@ import { input } from "../widgets/input.js";
 import { p } from "../widgets/p.js";
 import { button } from "../widgets/button.js";
 
-const formCoupon = function(){
+const coupon = function(){
     const divCoupon = document.createElement("div");
     const divForm= document.createElement('div')
 
@@ -26,4 +26,4 @@ const formCoupon = function(){
     return divCoupon
 }
 
-export{formCoupon}
+export{coupon}

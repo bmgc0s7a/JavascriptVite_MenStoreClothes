@@ -15,6 +15,9 @@ module.exports = {
         '-2/4': '-50%',
       }
     },
+    screens:{
+      'smd':'765px'
+    }
   },
   plugins: [],
 }

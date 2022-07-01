@@ -8,7 +8,7 @@ const descriptionCard = function(title, descriptiom, price ){
 
     divDescriptionCard.append(
         h1(title, ["font-kaushan", "text-xl", "uppercase", "textLimitTwo"]),
-        p(descriptiom, ['text-sm', 'text-gray-500', "h-32", "overflow-auto", "relative"]),
+        p(descriptiom, ['text-sm', 'text-gray-500', "h-32", "overflow-auto", "relative", "z-0"]),
        priceAndButton(price)
     )
     

@@ -5,6 +5,7 @@ import { sloganContact } from "./components/contact/sloganContact.js";
 import { cardShop } from "./components/shop/card.js";
 import { formCoupon } from "./components/cart/coupon.js";
 import { Payment } from "./components/cart/payment.js";
+import { workerComponent } from "./components/contact/workerComponent.js";
 
 const renderPages = function(){
 
@@ -30,7 +31,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'contact',
-            elements: [sloganContact(), ContactUs()]
+            elements: [sloganContact(), ContactUs(), workerComponent()]
         }
     }
     ));

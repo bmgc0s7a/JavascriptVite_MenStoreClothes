@@ -1,11 +1,8 @@
 import { ContactUs } from "./components/contact/contactUs.js";
-import { title } from "./components/cart/title.js";
-import { itemCart } from "./components/cart/itemCart.js";
 import { sloganContact } from "./components/contact/sloganContact.js";
 import { cardShop } from "./components/shop/card.js";
-import { formCoupon } from "./components/cart/coupon.js";
+import { cart } from "./components/cart/cart.js";
 import { searchAndCartBtn } from "./components/shop/searchAndCartBtn.js";
-import { Payment } from "./components/cart/payment.js";
 import { workerComponent } from "./components/contact/workerComponent.js";
 
 const renderPages = function(){
@@ -41,7 +38,7 @@ const renderPages = function(){
     {
         detail: {
             div: 'cart',
-            elements: [title(),itemCart(),formCoupon(),Payment()]
+            elements: [cart()]
         }
     }
     ));

@@ -588,12 +588,16 @@ video {
   top: 1.25rem;
 }
 
-.z-0{
-  z-index: 0;
+.z-50{
+  z-index: 50;
 }
 
 .z-10{
   z-index: 10;
+}
+
+.z-0{
+  z-index: 0;
 }
 
 .col-span-2{
@@ -662,16 +666,16 @@ video {
   display: none;
 }
 
+.h-5\/6{
+  height: 83.333333%;
+}
+
 .h-80{
   height: 20rem;
 }
 
 .h-32{
   height: 8rem;
-}
-
-.h-5\/6{
-  height: 83.333333%;
 }
 
 .h-40{
@@ -694,16 +698,16 @@ video {
   min-width: 100%;
 }
 
-.max-w-lg{
-  max-width: 32rem;
-}
-
 .max-w-sm{
   max-width: 24rem;
 }
 
 .max-w-\[250px\]{
   max-width: 250px;
+}
+
+.max-w-lg{
+  max-width: 32rem;
 }
 
 .grow{
@@ -771,16 +775,16 @@ video {
   gap: 0.75rem;
 }
 
+.gap-20{
+  gap: 5rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
 
 .gap-8{
   gap: 2rem;
-}
-
-.gap-20{
-  gap: 5rem;
 }
 
 .gap-x-12{
@@ -800,12 +804,12 @@ video {
   border-radius: 0.75rem;
 }
 
-.rounded{
-  border-radius: 0.25rem;
-}
-
 .rounded-md{
   border-radius: 0.375rem;
+}
+
+.rounded{
+  border-radius: 0.25rem;
 }
 
 .rounded-full{
@@ -892,20 +896,20 @@ video {
   padding: 1.5rem;
 }
 
-.p-7{
-  padding: 1.75rem;
-}
-
-.p-3{
-  padding: 0.75rem;
-}
-
 .p-10{
   padding: 2.5rem;
 }
 
 .p-5{
   padding: 1.25rem;
+}
+
+.p-7{
+  padding: 1.75rem;
+}
+
+.p-3{
+  padding: 0.75rem;
 }
 
 .py-4{
@@ -933,11 +937,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.px-11{
-  padding-left: 2.75rem;
-  padding-right: 2.75rem;
-}
-
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -946,6 +945,11 @@ video {
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.px-11{
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
 }
 
 .pl-8{
@@ -995,24 +999,24 @@ video {
   line-height: 1.75rem;
 }
 
-.text-4xl{
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-bold{
@@ -1037,14 +1041,14 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-slate-600{
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity));
-}
-
 .text-amber-900{
   --tw-text-opacity: 1;
   color: rgb(120 53 15 / var(--tw-text-opacity));
+}
+
+.text-slate-600{
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
 .text-gray-500{

@@ -19,7 +19,7 @@ function cardShop() {
             divOneCard.classList.add("product", "flex", "flex-col", "gap-4", "items-center", "bg-white", "max-w-[250px]", "rounded-md", "pt-4", "justify-between")
             divOneCard.append(
                 imageCard(product.image),
-                stars(),
+                stars(product.id, product.rate),
                 descriptionCard(product.title,product.desc, product.price)
             )
             divCardShop.append(

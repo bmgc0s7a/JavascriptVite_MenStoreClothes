@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --yellow-500: #FCD34D;
+  --black: #000; 
+}
+
 .contactUs{
    background-image: url("../view/images/manWithHat.jpg");
    background-size: cover;
@@ -24,4 +29,20 @@
   -webkit-line-clamp: 2; /* number of lines to show */
           line-clamp: 2; 
   -webkit-box-orient: vertical;
+}
+
+.product .stars {
+  direction:rtl;
+}
+
+.product .stars:hover div svg path {
+  fill: var(--black);
+}
+
+.product .stars div:hover svg path {
+  fill: var(--yellow-500);
+}
+
+.product .stars div:hover ~ div svg path{
+  fill: var(--yellow-500);
 }

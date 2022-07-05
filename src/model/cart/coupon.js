@@ -1,25 +1,25 @@
 class Coupon {
     #name
-    #description
+    #discount
 
-    constructor({name, description}) {
-        Object.assign(this, {name, description});
+    constructor({name, discount}) {
+        Object.assign(this, {name, discount});
     }
 
     get name() {
         return this.#name;
     }
 
-    get description() {
-        return this.#description;
+    get discount() {
+        return this.#discount;
     }
 
     set name(name){
         this.#name = name;
     }
 
-    set description(description){
-        this.#description = description; 
+    set discount(discount){
+        this.#discount = discount; 
     }
 }
 

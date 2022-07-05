@@ -5,7 +5,6 @@ class FromContactService {
         try {
             return FromContactAPI.send(formValues);
         } catch (error) {
-            console.log('ErrorMeu: ' + e.message)
             throw error;
         }
     }

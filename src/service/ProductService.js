@@ -31,7 +31,7 @@ class ProductService {
 
     static update(productObj){
         try {
-            this.#bd.upd('products', productObj, true);
+            this.#bd.upd('products', productObj);
         } catch (e) {
             throw e;
         }

@@ -31,9 +31,9 @@ class CartStore {
         this.#cartStore.productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount);
     }
 
-    static addProduct(productID, quantidade){
+    static addProduct(productID, quantidade = 1, isIncrease = true){
         try {
-            this.addProductStore(productID, quantidade);
+            this.addProductStore(productID, quantidade, isIncrease);
             CartBD.save(this.#cartStore);
         } catch (error) {
             throw error

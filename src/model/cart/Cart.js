@@ -44,7 +44,7 @@ class Cart {
         }
     }
 
-    productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount){
+    async productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount){
         try {
             const productFind = this.#products.findIndex(product => product.id === productID);
             if(productFind == -1){
@@ -56,12 +56,12 @@ class Cart {
                     this.#products[productFind].quantidade -= quantidade;
             }
             if(insertStoreAmount) {
-                const priceProduct = ProductStore.get(productID).price;
-                if(isIncrease)
-                    this.#amount += priceProduct;
-                else 
-                    this.#amount -= priceProduct;
-            }
+                    const priceProduct = await ProductStore.get(productID);
+                    if(isIncrease)
+                        this.#amount += priceProduct.price;
+                    else 
+                        this.#amount -= priceProduct.price;
+            }             
         } catch (e){
             throw e;
         }

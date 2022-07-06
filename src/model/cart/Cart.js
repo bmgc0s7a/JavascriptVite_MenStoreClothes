@@ -71,7 +71,7 @@ class Cart {
         try {
             const productFind = this.#products.findIndex(product => product.id === productID);
             const quantidade = this.#products[productFind].quantidade;
-            const priceProduct = await ProductStore.get(1)
+            const priceProduct = await ProductStore.get(productID)
             this.#amount -= priceProduct.price*quantidade;
             this.#products.splice(productFind,1);            
         } catch (error) {

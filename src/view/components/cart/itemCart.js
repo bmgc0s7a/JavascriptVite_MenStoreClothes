@@ -8,6 +8,7 @@ import CartStore from "../../../store/CartStore.js";
 function itemCart({ id, quantidade }) {
 
     const divItem = document.createElement('div')
+    divItem._id = id;
     const divProductsImg = document.createElement('div')
     const divProductsDesc = document.createElement('div');
 
@@ -36,6 +37,17 @@ function itemCart({ id, quantidade }) {
         if (qtd.value == 1) {
             less.disabled = true
         }
+
+        document.addEventListener('changeQtd', function(e) {
+            if(divItem._id === e.detail){
+                qtd.value = +qtd.value + 1
+                qtd.textContent = qtd.value
+                if (less.disabled) {
+                    less.disabled = false
+                }
+            }
+        })
+
         less.addEventListener('click', function () {
             CartStore.addProduct(id, 1, false)
             qtd.value = qtd.value - 1

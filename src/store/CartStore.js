@@ -27,14 +27,16 @@ class CartStore {
         }
     }
 
-    static addProductStore(productID, quantidade = 1, isIncrease = true, insertStoreAmount = true){
-        this.#cartStore.productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount);
+    static async addProductStore(productID, quantidade = 1, isIncrease = true, insertStoreAmount = true){
+        await this.#cartStore.productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount);
     }
 
     static addProduct(productID, quantidade = 1, isIncrease = true){
         try {
-            this.addProductStore(productID, quantidade, isIncrease);
-            CartBD.save(this.#cartStore);
+            (async () => {
+                await this.addProductStore(productID, quantidade, isIncrease);
+                CartBD.save(this.#cartStore);
+            })()
         } catch (error) {
             throw error
         }

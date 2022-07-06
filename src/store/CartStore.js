@@ -40,10 +40,17 @@ class CartStore {
         }
     }
 
-    static delProduct(productID){
+    static async delProduct(productID){
         try {
-            this.#cartStore.productsRemove(productID);
-            CartBD.save(this.#cartStore);
+                await this.#cartStore.productsRemove(productID);
+                if(this.#cartStore.products.length){
+                    CartBD.save(this.#cartStore);
+                    return true;
+                } else {
+                    CartBD.delete();
+                    return false;
+                }
+            
         } catch (error) {
             throw error
         }

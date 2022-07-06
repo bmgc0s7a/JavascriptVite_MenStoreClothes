@@ -33,6 +33,14 @@ class CartBD {
         }
     }
 
+    static delete(){
+        try {
+            CartService.delete();
+        } catch (e) {
+            throw e;
+        }
+    }
+
     static payment(cartInstance){
         const CartObj = CartJSON.convert(cartInstance);
         return CartService.payment(CartObj);

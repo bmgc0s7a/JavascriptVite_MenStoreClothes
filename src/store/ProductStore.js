@@ -8,16 +8,19 @@ class ProductStore {
     static async getAll(){
         if(!(this.#Products.length)){
             const dataProducts = await ProductBD.get();
-            dataProducts.forEach(product => {
-                this.#add(product);
-            });
+            if(!(this.#Products.length)){
+                dataProducts.forEach(product => {
+                    this.#add(product);
+                });
+            }
             return this.#Products;
         }
         return this.#Products;
     }
     
-    static get(value,attr = 'id'){
+    static async get(value,attr = 'id'){
         try {
+            await ProductStore.getAll();
             const [objOrNot] = this.#Products.filter(product => product[attr] === value);
             NotExistProduct.exec(objOrNot);
             return objOrNot;
@@ -30,7 +33,6 @@ class ProductStore {
         const newProductInstance = new Product(objProduct);
         this.#Products.push(newProductInstance);
         return newProductInstance;
-        //console.log();
     }
     
     static save(objProduct){

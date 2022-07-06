@@ -67,10 +67,13 @@ class Cart {
         }
     }
 
-    productsRemove(productID){
+    async productsRemove(productID){
         try {
             const productFind = this.#products.findIndex(product => product.id === productID);
-            this.#products.splice(productFind,1);
+            const quantidade = this.#products[productFind].quantidade;
+            const priceProduct = await ProductStore.get(1)
+            this.#amount -= priceProduct.price*quantidade;
+            this.#products.splice(productFind,1);            
         } catch (error) {
             throw error;
         }

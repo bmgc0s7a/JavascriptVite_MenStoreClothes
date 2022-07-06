@@ -22,6 +22,14 @@ class CartService {
         }
     }
 
+    static delete (){
+        try {
+            this.#bd.delAll('cart');
+        } catch (e) {
+            throw e;
+        }
+    }
+
     static payment(cartObj){
         try {
             const CartObjPayment = [];

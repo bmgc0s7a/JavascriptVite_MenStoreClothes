@@ -32,11 +32,19 @@ function cart() {
 
     divTitleItem.append(title(), divItems)
 
+    document.addEventListener('verifyItens', function(e){
+        if(!divItems.childElementCount){
+            divTitleItem.classList.add('hidden')
+            divCouponPayment.classList.add('hidden')
+            empty.classList.remove('hidden')
+        }
+    })
+
     document.addEventListener('cartEmpty', function () {
         divTitleItem.classList.add('hidden')
         divCouponPayment.classList.add('hidden')
         empty.classList.remove('hidden')
-    })
+    });
 
     document.addEventListener('productAdd', function (e) {
         if (divTitleItem.classList.contains('hidden')) {

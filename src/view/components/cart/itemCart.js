@@ -38,6 +38,11 @@ function itemCart({ id, quantidade }) {
             less.disabled = true
         }
 
+        del.addEventListener('click', function(e){
+            divItem.remove();
+            document.dispatchEvent(new CustomEvent('verifyItens'))
+        });
+
         document.addEventListener('changeQtd', function(e) {
             if(divItem._id === e.detail){
                 qtd.value = +qtd.value + 1

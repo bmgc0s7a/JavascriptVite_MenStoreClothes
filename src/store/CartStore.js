@@ -11,11 +11,21 @@ class CartStore {
             if(!this.#cartStore.products.length){
                 try {
                     const [CartDatabase] = CartBD.get();
-                    if(CartDatabase.coupon) this.#cartStore.addCoupon(CartDatabase.coupon.name);
+                    
                     CartDatabase.products.forEach(product => {
                         this.addProductStore(product.id, product.quantidade, true, false);
                     });
                     this.#cartStore.amount = CartDatabase.amount;
+                    if(CartDatabase.coupon){
+                        (async () => {
+                            await this.#cartStore.addCoupon(CartDatabase.coupon.name);
+                            document.dispatchEvent(new CustomEvent('updatedPrices',
+                                {
+                                    detail: this.#cartStore.amount
+                                }
+                            ))
+                        })()  
+                    }
                     document.dispatchEvent(new CustomEvent('updatedPrices',
                         {
                             detail: this.#cartStore.amount
@@ -38,9 +48,8 @@ class CartStore {
         await this.#cartStore.productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount);
         document.dispatchEvent(new CustomEvent('updatedPrices',
         {
-          detail: this.#cartStore.amount
-        }
-       ))
+            detail: this.#cartStore.amount
+        }));
     }
 
     static addProduct(productID, quantidade = 1, isIncrease = true){
@@ -60,9 +69,8 @@ class CartStore {
                 
                 if(this.#cartStore.products.length){
                     CartBD.save(this.#cartStore);
-                    document.dispatchEvent(new CustomEvent('updatedPrices',
-                    {
-                    detail: this.#cartStore.amount
+                    document.dispatchEvent(new CustomEvent('updatedPrices',{
+                        detail: this.#cartStore.amount
                     }));
                     return true;
                 } else {
@@ -79,6 +87,9 @@ class CartStore {
     static async addCoupon(name){
         try {
             await this.#cartStore.addCoupon(name);
+            document.dispatchEvent(new CustomEvent('updatedPrices',{
+                detail: this.#cartStore.amount
+            }));
             CartBD.save(this.#cartStore); 
         } catch (error) {
             throw error

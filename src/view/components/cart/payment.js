@@ -44,9 +44,6 @@ function payment() {
     divPaymentText.append(
         p('Total:'),
         total,
-        
-        // p('Total:'),
-        // totalFinal,
         button('Purchase', 'Make Purchase', ["bg-amber-300", "hover:bg-amber-900","text-amber-900","hover:text-white","hover:cursor-pointer", "rounded-md" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-10", "placeholder-opacity-50","col-span-2"]), 
     )
     divPaymentLogos.append(

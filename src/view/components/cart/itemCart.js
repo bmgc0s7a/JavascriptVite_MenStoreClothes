@@ -68,7 +68,6 @@ function itemCart({ id, quantidade }) {
             if (qtd.value > 1) {
                 less.disabled = false
             }
-            console.log(qtd.value)
         })
         del.addEventListener('click', function () {
             CartStore.delProduct(id)

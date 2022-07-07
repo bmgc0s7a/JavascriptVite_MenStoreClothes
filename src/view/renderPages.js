@@ -17,15 +17,6 @@ const renderPages = function(){
     document.dispatchEvent(new CustomEvent('insertPage', 
     {
         detail: {
-            div: 'aboutUS',
-            elements: ['<p>About US</p>']
-        }
-    }
-    ));
-
-    document.dispatchEvent(new CustomEvent('insertPage', 
-    {
-        detail: {
             div: 'contact',
             elements: [sloganContact(), ContactUs()]
         }

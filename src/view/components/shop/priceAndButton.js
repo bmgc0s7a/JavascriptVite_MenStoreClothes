@@ -2,6 +2,7 @@
 import CartStore from "../../../store/CartStore.js";
 import { button } from "../widgets/button.js";
 import { p } from "../widgets/p.js";
+import { messageToUser } from "../public/messageToUser.js";
 
 const priceAndButton = function (price) {
     const priceButtonDiv = document.createElement('div');
@@ -17,6 +18,7 @@ const priceAndButton = function (price) {
            detail:productId
          }
         ))
+        messageToUser('Product Added to Cart','success');
     })
 
     priceButtonDiv.append(

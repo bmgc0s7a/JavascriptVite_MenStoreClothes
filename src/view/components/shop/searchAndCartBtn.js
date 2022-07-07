@@ -4,7 +4,7 @@ import { input } from "../widgets/input.js"
 
 function searchAndCartBtn() {
 const divSearchBtn = document.createElement('div')
-divSearchBtn.classList.add("flex","flex-wrap", "items-center", "gap-8", "min-w-full", "justify-center")
+divSearchBtn.classList.add("flex","flex-wrap", "mt-3.5","items-center", "gap-8", "min-w-full", "justify-center")
 const cartBtn = button("cartBtn","Ir para o carrinho", ["bg-amber-300", "hover:bg-amber-900","text-amber-900","hover:text-white","hover:cursor-pointer", "rounded-md" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-11", "placeholder-opacity-50" , "text-xs"] )
 cartBtn.addEventListener('click', (e)=>{
 

@@ -10,9 +10,10 @@ const sloganContact = function(){
     );
     const h1SloganNext = h1(
         wordSlogan.at(0), ['text-amber-100', 'uppercase', 'text-4xl', 'p-3']
-    );
-    let indexSlogan = 1;
-
+        );
+        let indexSlogan = 1;
+        
+    h1SloganNext.classList.add('animationWords')
     setInterval(()=>{
         if(indexSlogan == 3) indexSlogan = 0
         h1SloganNext.textContent = wordSlogan.at(indexSlogan);

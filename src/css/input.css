@@ -45,6 +45,7 @@
 
 .product .stars div:hover ~ div svg path{
   fill: var(--yellow-500);
+}
 @keyframes leftRight {
   0% {
     transform: translateY(50px);

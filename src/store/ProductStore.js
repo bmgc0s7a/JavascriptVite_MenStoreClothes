@@ -44,9 +44,12 @@ class ProductStore {
 
     static update(id, property, value){
         try {
-            const productToChange = this.get(id);
-            productToChange[property] = value;
-            ProductBD.update(productToChange);          
+            (async () => {
+                const productToChange = await this.get(id);
+                productToChange[property] = value;
+                ProductBD.update(productToChange);  
+            })();
+                    
         } catch (e) {
             throw e;
         }

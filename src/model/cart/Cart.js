@@ -32,12 +32,9 @@ class Cart {
     async addCoupon(coupon){
         try {
             const [data, response] = await CartBD.valCoupon(coupon);
-            console.log(data);
             if(response){
-                //this.#coupon = 'dasdsadasda';
                 this.#coupon = new Coupon(data.couponcode);
             }
-            console.log(this);
             return [data.message, response];
         } catch(e){
             throw e;

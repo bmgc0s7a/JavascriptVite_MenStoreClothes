@@ -1313,7 +1313,6 @@ video {
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0,0.7);
 }
 
-<<<<<<< HEAD
 .textLimitTwo {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1338,7 +1337,16 @@ video {
 
 .product .stars div:hover ~ div svg path{
   fill: var(--yellow-500);
-=======
+}
+
+.imageCard img{
+  transition: transform .6s
+}
+
+.imageCard:hover img{
+  transform: scale(1.1);
+}
+
 @-webkit-keyframes leftRight {
   0% {
     transform: translateY(50px);
@@ -1380,15 +1388,6 @@ video {
           animation-duration: 5000ms;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
->>>>>>> feature/componentSlogan
-}
-
-.imageCard img{
-  transition: transform .6s
-}
-
-.imageCard:hover img{
-  transform: scale(1.1);
 }
 
 .hover\:cursor-pointer:hover{
@@ -1426,10 +1425,6 @@ video {
 
   .sm\:block{
     display: block;
-  }
-
-  .sm\:hidden{
-    display: none;
   }
 
   .sm\:h-full{
@@ -1473,12 +1468,24 @@ video {
 }
 
 @media (min-width: 768px){
+  .md\:hidden{
+    display: none;
+  }
+
   .md\:h-\[500px\]{
     height: 500px;
   }
 
   .md\:w-6\/12{
     width: 50%;
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:justify-between{
+    justify-content: space-between;
   }
 }
 
@@ -1543,8 +1550,8 @@ video {
     padding-bottom: 4rem;
   }
 
-  .xl\:px-52{
-    padding-left: 13rem;
-    padding-right: 13rem;
+  .xl\:px-28{
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
-} 
+}

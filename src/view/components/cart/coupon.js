@@ -2,6 +2,7 @@ import { input } from "../widgets/input.js";
 import { p } from "../widgets/p.js";
 import { button } from "../widgets/button.js";
 import CartStore from "../../../store/CartStore.js";
+import { messageToUser } from "../public/messageToUser.js";
 
 const coupon = function(){
     const divCoupon = document.createElement("div");
@@ -22,8 +23,10 @@ const coupon = function(){
             (async ()=>{
                 try{
                     await CartStore.addCoupon(inputCoupon);
+                    messageToUser(`Coupon applied with success` ,'success',900)
                 } catch (e){
                     console.error(e);
+                    messageToUser(`Invalid coupon` ,'error',900)
                 }
             })()
         }

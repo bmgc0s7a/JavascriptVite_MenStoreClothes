@@ -5,6 +5,7 @@ import CartStore from "../../../store/CartStore.js";
 import { messageToUser } from "../public/messageToUser.js";
 import CartBD from "../../../model/cart/CartBD.js";
 
+
 function payment() {
     const divPayment = document.createElement("div");
 

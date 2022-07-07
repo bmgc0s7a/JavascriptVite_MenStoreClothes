@@ -4,6 +4,7 @@ import { button } from "../widgets/button.js";
 import { buttonIcon } from "../widgets/buttonIcon.js";
 import ProductStore from "../../../store/ProductStore.js";
 import CartStore from "../../../store/CartStore.js";
+import { messageToUser } from "../public/messageToUser.js";
 
 function itemCart({ id, quantidade }) {
 
@@ -60,6 +61,7 @@ function itemCart({ id, quantidade }) {
             if (qtd.value == 1) {
                 less.disabled = true
             }
+            messageToUser(`Removed one unit to cart` ,'success',900);
         })
         plus.addEventListener('click', function () {
             CartStore.addProduct(id, 1, true)
@@ -68,9 +70,11 @@ function itemCart({ id, quantidade }) {
             if (qtd.value > 1) {
                 less.disabled = false
             }
+            messageToUser(`Added one unit to cart` ,'success',900);
         })
         del.addEventListener('click', function () {
             CartStore.delProduct(id)
+            messageToUser(`Product deleted from cart` ,'error',900);
         })
 
         divActions.append(
@@ -79,12 +83,12 @@ function itemCart({ id, quantidade }) {
             plus,
             del
         )
-        divActions.classList.add('self-center', 'text-amber-900', "sm:px-4")
+        divActions.classList.add('flex','self-center','text-amber-900', "sm:px-4",)
 
         const hr = document.createElement('hr')
-        hr.classList.add('my-2', 'sm:hidden')
+        hr.classList.add('my-2', 'md:hidden')
 
-        divItem.classList.add('flex', "bg-white", 'flex-col', 'justify-center', 'items-center', "sm:flex-row", "sm:justify-between")
+        divItem.classList.add('flex', "bg-white",'flex-col', "md:flex-row", "md:justify-between")
         divItem.append(ElementsLeft, divActions, hr)
     })()
 

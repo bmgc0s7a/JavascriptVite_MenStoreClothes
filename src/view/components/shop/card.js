@@ -16,7 +16,7 @@ function cardShop() {
             const divOneCard = document.createElement('div')
             divOneCard._id = product.id
             divOneCard._title = product.title
-            divOneCard.classList.add("product", "flex", "flex-col", "gap-4", "items-center", "bg-white", "max-w-[250px]", "rounded-md", "pt-4", "justify-between")
+            divOneCard.classList.add("product", "flex", "flex-col", "gap-4", "items-center","imageCard", "bg-white", "max-w-[250px]", "rounded-md", "pt-4", "justify-between")
             divOneCard.append(
                 imageCard(product.image),
                 stars(product.id, product.rate),

@@ -46,3 +46,11 @@
 .product .stars div:hover ~ div svg path{
   fill: var(--yellow-500);
 }
+
+.imageCard img{
+  transition: transform .6s
+}
+
+.imageCard:hover img{
+  transform: scale(1.1);
+} 

@@ -21,7 +21,11 @@ const coupon = function(){
         if(inputCoupon){
             (async ()=>{
                 try{
-                    await CartStore.addCoupon(inputCoupon);
+                    const [_,couponResponse] = await CartStore.addCoupon(inputCoupon);
+                    if(couponResponse)
+                        messageToUser(`Coupon applied with success` ,'success',900)
+                    else 
+                        messageToUser(`Invalid coupon` ,'error',900)
                 } catch (e){
                     console.error(e);
                 }

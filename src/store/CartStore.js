@@ -85,11 +85,12 @@ class CartStore {
 
     static async addCoupon(name){
         try {
-            await this.#cartStore.addCoupon(name);
+            const responseCoupon = await this.#cartStore.addCoupon(name);
             document.dispatchEvent(new CustomEvent('updatedPrices',{
                 detail: this.#cartStore.amount
             }));
             CartBD.save(this.#cartStore); 
+            return responseCoupon;
         } catch (error) {
             throw error
         }

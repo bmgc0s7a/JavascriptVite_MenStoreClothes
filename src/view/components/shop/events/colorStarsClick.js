@@ -2,7 +2,6 @@ const colorStarsClick = function (divStart, rate){
     const divsStars = divStart.childNodes;
     divsStars.forEach(star => {
         const [svg] = star.childNodes;
-        console.log(star);
         if(star._id <= rate) 
             svg.classList.add('text-yellow-500')
         else

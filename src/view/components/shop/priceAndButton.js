@@ -1,16 +1,32 @@
-import { button } from "../widgets/button,js";
-import { p } from "../widgets/p,js";
 
-const priceAndButton = function () {
-    const priceAndButton = document.createElement('div');
-    priceAndButton.classList.add('flex', 'justify-between', 'gap-3');
-    
+import CartStore from "../../../store/CartStore.js";
+import { button } from "../widgets/button.js";
+import { p } from "../widgets/p.js";
+import { messageToUser } from "../public/messageToUser.js";
 
-    priceAndButton.append(
-        p('$223'),
-        button('addCartButton', 'Add to cart')
+const priceAndButton = function (price) {
+    const priceButtonDiv = document.createElement('div');
+    priceButtonDiv.classList.add('flex', 'justify-between', 'items-center');
+
+    const buttonAddCart = button('addCartButton', 'Add to cart', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", "hover:cursor-pointer", "rounded-md", "border-2", "border-amber-900", "placeholder-black", "py-2", "px-1", "placeholder-opacity-50", "text-xs"])
+
+    buttonAddCart.addEventListener('click', function (e) {
+        const productId = e.target.closest('.product')._id
+        CartStore.addProduct(productId)
+        document.dispatchEvent(new CustomEvent('productAdd',
+         {
+           detail:productId
+         }
+        ))
+        messageToUser('Product Added to Cart','success');
+    })
+
+    priceButtonDiv.append(
+        p(price.toFixed(2) + "€", ["font-kaushan", "text-lg"]),
+        buttonAddCart
     )
-    return priceAndButton
+
+    return priceButtonDiv
 }
 
-export {priceAndButton}
+export { priceAndButton }

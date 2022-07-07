@@ -3,17 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>BOTIQUE BUSHIDO</title>
 </head>
 
 <body>
   <div class="bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
-    <ul id="menu"
-      class="fixed left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
-      <li id="shopMenu"
-        class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+    <ul id="menu" class="fixed z-50 left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
+      <li id="shopMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-bag-shopping"></i>
         <h6 class="text-black hidden lg:block">Shop</h6>
       </li>
@@ -36,7 +34,7 @@
     </div>
   </div>
   <div id="app">
-    <div id="shop" class="hidden"></div>
+    <div id="shop" class="flex flex-col items-center pl-8 pr-8 pt-2 bg-amber-100"></div>
     <div id="aboutUs" class="hidden h-auto scroll-auto sm:scroll-smooth bg-gradient-to-b from-amber-800 to-amber-100 px-20">
       <h1 class="font-kaushan py-14 text-2xl text-center sm:text-3xl ">About us</h1>
       <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
@@ -91,28 +89,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <h1 class="text-2xl text-center font-kaushan xs:grid md:col-span-2 md:gap-4 xl:col-span-5 2xl:col-span-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        </h1>
-        <p>Lorem ipsum dolor sit amet
-        </p>
-        <div class="aspect-square">
-          <img class="h-50 w-full object-cover sm:h-full sm:min-w-full" src="src/view/images/aboutUsTest.jpg">
-        </div>
-        <div class="h-50 bg-black xs:h-auto aspect-square">
-          <img class="h-50 w-full object-cover sm:h-full sm:min-w-full" src="src/view/images/aboutUsTest.jpg">
-        </div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
-      </div>
-
-     -->
       <h1 class="font-kaushan p-6 text-2xl text-center sm:text-3xl mb-10 mt-10">History</h1>
       <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
@@ -205,27 +181,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        <div class="bg-white rounded-xl shadow-md">
-          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
-            alt="">
-      </div>
-        <div class="bg-white rounded-xl shadow-md">
-          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
-            alt="">
-        </div>
-        <div class="bg-white rounded-xl shadow-md">
-            <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
-              alt="">
-        </div>
-        <div class="md:col-start-2 bg-white rounded-xl shadow-md">
-          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
-            alt="">
-      </div>
-      </div> -->
     </div>
     <div id="contact" class="hidden"></div>
-    <div id="cart" class="bg-amber-100 p-6 text-xl xl:py-16 xl:px-52"></div>
+    <div id="cart" class="hidden bg-amber-100 p-6 text-xl xl:py-16 xl:px-52"></div>
   </div>
   <div class="footer bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
     <div class="logo-footer none hidden sm:block">

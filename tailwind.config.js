@@ -14,7 +14,7 @@ module.exports = {
       translate: {
         '-2/4': '-50%',
       }
-    },
+    }
   },
   plugins: [],
 }

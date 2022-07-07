@@ -22,7 +22,7 @@ const priceAndButton = function (price) {
     })
 
     priceButtonDiv.append(
-        p(price + "€", ["font-kaushan", "text-lg"]),
+        p(price.toFixed(2) + "€", ["font-kaushan", "text-lg"]),
         buttonAddCart
     )
 

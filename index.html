@@ -10,16 +10,20 @@
 
 <body>
   <div class="bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
-    <ul id="menu" class="fixed left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
-      <li id="shopMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+    <ul id="menu"
+      class="fixed left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
+      <li id="shopMenu"
+        class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-bag-shopping"></i>
         <h6 class="text-black hidden lg:block">Shop</h6>
       </li>
-      <li id="aboutUsMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+      <li id="aboutUsMenu"
+        class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-building"></i>
         <h6 class="text-black hidden lg:block">About Us</h6>
       </li>
-      <li id="contactMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
+      <li id="contactMenu"
+        class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
         <i class="fa-solid fa-square-phone"></i>
         <h6 class="text-black hidden lg:block">Contact</h6>
       </li>
@@ -33,7 +37,193 @@
   </div>
   <div id="app">
     <div id="shop" class="hidden"></div>
-    <div id="aboutUs" class="hidden"></div>
+    <div id="aboutUs" class="hidden h-auto scroll-auto sm:scroll-smooth bg-gradient-to-b from-amber-800 to-amber-100 px-20">
+      <h1 class="font-kaushan py-14 text-2xl text-center sm:text-3xl ">About us</h1>
+      <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/variousClothesStand.jpg">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">Motivation</div>
+            <p class="block mt-1 text-lg text-black">Committed to democratize the supply chain.</p>
+            <p class="mt-3 text-slate-500">
+              We’re merging the physical and digital world of the textile industry and serve as the portal between both.
+              We are rewriting the rules of responsible textile creation, by digitizing the design- and production
+              process and the introduction of Textile-as-a-Service. With technology at the core of our business, we are
+              committed to democratize the supply chain through our transparent ecosystem of trailblazers, partners and
+              creators.</p>
+          </div>
+        </div>
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/clothesZommed.jpg"
+              alt="">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">Method</div>
+            <p class="block mt-1 text-lg text-black">From the web to our lab in a click.</p>
+            <p class="mt-3 text-slate-500">
+              At Boutique we’re constantly working to enable a seamless transition between the digital and tactile
+              world.
+              By having all knowledge in-house we can mirror production faciliaties to improve workflows.
+              <br> ♦ Variety of 16 and 20gg circular knitting machines
+              <br> ♦ Worldwide integrated production network
+              <br> ♦ Wide range of in-house yarn stock and knowledge
+              <br> ♦ Rapidly growing offering of digital design possibilities
+            </p>
+          </div>
+        </div>
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden col-span-1 sm:col-span-2 lg:col-span-1">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/manWithHat.jpg"
+              alt="">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">Experience</div>
+            <p class="block mt-1 text-lg text-black">Working on the future of textile creation since 2015.</p>
+            <p class="mt-3 text-slate-500">With over a decade of experience, Boutique has worked with global industry
+              leaders in fashion, sportswear, interior and automotive brands to create consciously bespoke textiles.
+              Together with our transparent ecosystem of responsible suppliers we are devoted to give creators worldwide
+              access to responsible textile creation.
+              <br>“Our mission is to inspire and enable an entire generation of creators to make less but more meaningful and responsible products.”
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <h1 class="text-2xl text-center font-kaushan xs:grid md:col-span-2 md:gap-4 xl:col-span-5 2xl:col-span-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </h1>
+        <p>Lorem ipsum dolor sit amet
+        </p>
+        <div class="aspect-square">
+          <img class="h-50 w-full object-cover sm:h-full sm:min-w-full" src="src/view/images/aboutUsTest.jpg">
+        </div>
+        <div class="h-50 bg-black xs:h-auto aspect-square">
+          <img class="h-50 w-full object-cover sm:h-full sm:min-w-full" src="src/view/images/aboutUsTest.jpg">
+        </div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+        <div class="h-50 bg-black xs:h-auto aspect-square"></div>
+      </div>
+
+     -->
+      <h1 class="font-kaushan p-6 text-2xl text-center sm:text-3xl mb-10 mt-10">History</h1>
+      <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/clothesStore.jpg">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">Maximum Midriff</div>
+            <p class="block mt-1 text-lg text-black">Mini-Skirt Suits With Major Impact</p>
+            <p class="mt-3 text-slate-500">
+              Thebe Magugu and Luar’s Raul Lopez rethought the trench as the season’s must-have outerwear while Louis
+              Vuitton’s Nicolas Ghesquière and Valentino’s Pierpaolo Piccioli placed their bets on dramatic capes.
+              Rodarte offered holistic sun salutations and Stella McCartney turned mushrooms into bags. Riccardo Tisci
+              perfected the bum-reveal at Burberry while Mike Eckhaus and Zoe Latta did it with transparent garments
+              that covered up as much as they exposed.</p>
+          </div>
+        </div>
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/clothesBed.jpg">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">See Through This</div>
+            <p class="block mt-1 text-lg text-black">Tops That Pop, Fluff, and Fray</p>
+            <p class="mt-3 text-slate-500">
+              As the industry snapped back to the usual fashion month rhythms, the collections that stood out after four
+              weeks of runway shows had less to do with garments and more to do with new modes of presenting fashion. As
+              per our seasonal recap, the shows that we will remember from spring 2022 are the lively experiments that
+              redefined what a show could be, like Balenciaga’s The Simpsons episode, Balmain’s music festival, and
+              Marni’s
+              performance piece with an audience fully outfitted in upcycled Marni wares..</p>
+          </div>
+        </div>
+        <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden col-span-1 sm:col-span-2 lg:col-span-1">
+          <div class="">
+            <img class="h-50 w-full object-cover sm:h-full sm:min-w-full " src="/src/view/images/outfitWall.jpg">
+          </div>
+          <div class="p-8">
+            <div class="uppercase tracking-wide text-lg text-black font-bold">Trenches Get Twisted</div>
+            <p class="block mt-1 text-lg text-black">Solar Power Colors for the Beach, the Office, and the Nail Salon
+            </p>
+            <p class="mt-3 text-slate-500">
+              But what of silhouette, texture and color, and material development? The emphasis on shows and showiness
+              actually seems to have freed up designers’ thinking when it comes to clothes. We got everything from
+              Grecian draping at Loewe to exposed torsos at Miu Miu and crisp little skirt suits at Christian Dior. Both
+              Marine Serre and Dries Van Noten put an emphasis on you-have-to-touch-it texture while Botter’s Rushemy
+              Botter and Lisi Herrebrugh and Sunnei’s Loris Messina and Simone Rizzo created sleek surfwear and stripes
+              that come alive on a laptop or phone screen.</p>
+          </div>
+        </div>
+      </div>
+      <h1 class="font-kaushan p-6 text-2xl text-center sm:text-3xl mb-10 mt-10">Team</h1>
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+            <div class="flex flex-col items-center px-6">
+              <img src="/src/view/images/bruno.jpeg" class="rounded-full shadow-lg">
+              <div class="pt-6 text-center">
+                <h1 class="text-gray-900 text-xl font-nunito font-bold leading-normal mt-0 mb-2">Bruno Costa</h1>
+                <p class="text-slate-500 text-base font-nunito leading-relaxed mt-0 mb-12">Team Leader</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+            <div class="flex flex-col items-center px-6">
+              <img src="/src/view/images/renato.jpeg" class="rounded-full shadow-lg">
+              <div class="pt-6 text-center">
+                <h1 class="text-gray-900 text-xl font-nunito font-bold leading-normal mt-0 mb-2">Renato Rodrigues</h1>
+                <p class="text-slate-500 text-base font-nunito leading-relaxed mt-0 mb-12">Team Member</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+            <div class="flex flex-col items-center px-6">
+              <img src="/src/view/images/ricardo.jpeg" class="rounded-full shadow-lg">
+              <div class="pt-6 text-center">
+                <h1 class="text-gray-900 text-xl font-nunito font-bold leading-normal mt-0 mb-2">Ricardo Sousa</h1>
+                <p class="text-slate-500 text-base font-nunito leading-relaxed mt-0 mb-12">Team Member</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-6/12 lg:w-3/12 lg:mb-0 mb-12 px-4">
+            <div class="flex flex-col items-center px-6">
+              <img src="/src/view/images/miguel.jpeg" class="rounded-full shadow-lg">
+              <div class="pt-6 text-center">
+                <h1 class="text-gray-900 text-xl font-nunito font-bold leading-normal mt-0 mb-2">Miguel Lima</h1>
+                <p class="text-slate-500 text-base font-nunito leading-relaxed mt-0 mb-12">Team Member</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div class="bg-white rounded-xl shadow-md">
+          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
+            alt="">
+      </div>
+        <div class="bg-white rounded-xl shadow-md">
+          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
+            alt="">
+        </div>
+        <div class="bg-white rounded-xl shadow-md">
+            <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
+              alt="">
+        </div>
+        <div class="md:col-start-2 bg-white rounded-xl shadow-md">
+          <img class="object-center" src="/src/view/images/aboutUsTest.jpg"
+            alt="">
+      </div>
+      </div> -->
+    </div>
     <div id="contact" class="hidden"></div>
     <div id="cart" class="bg-amber-100 p-6 text-xl xl:py-16 xl:px-52"></div>
   </div>

@@ -23,6 +23,7 @@ const formContactUs = function(){
             inputText.forEach(input=> {
                 inputIsEmpty.exec(input.name, input.value)
                 formObj[input.name] = input.value;
+                input.value=''
             });
             (async () => {
                 const [message, status] = await FromContactService.send(formObj);

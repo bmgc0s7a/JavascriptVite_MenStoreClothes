@@ -1,6 +1,7 @@
 import { p } from "../widgets/p.js";
 import { button } from "../widgets/button.js";
 import {icon } from "../widgets/icon.js";
+import CartStore from "../../../store/CartStore.js";
 
 function payment() {
     const divPayment = document.createElement("div");
@@ -8,13 +9,23 @@ function payment() {
     const divPaymentText = document.createElement("div");
     const divPaymentLogos = document.createElement("div");
     divPaymentText.classList.add("grid","grid-cols-2","gap-x-12");
+
+    const total = p('30€',['text-end']);
+    const discount = p('10€',['text-end']);
+    const totalFinal = p('20€',['text-end']);
+
+    document.addEventListener('updatedPrices', (e) =>{
+        const price = CartStore.get().amount
+        total.textContent = Number(price).toFixed(2)+"€";
+    });
+
     divPaymentText.append(
         p('Total price:'),
-        p('30€',['text-end']),
+        total,
         p('Discount:'),
-        p('10€',['text-end']),
+        discount,
         p('Total:'),
-        p('20€',['text-end']),
+        totalFinal,
         button('Purchase', 'Make Purchase', ["bg-amber-300", "hover:bg-amber-900","text-amber-900","hover:text-white","hover:cursor-pointer", "rounded-md" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-10", "placeholder-opacity-50","col-span-2"]), 
     )
     divPaymentLogos.append(

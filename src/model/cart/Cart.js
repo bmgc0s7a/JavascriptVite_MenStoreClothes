@@ -32,19 +32,16 @@ class Cart {
     async addCoupon(coupon){
         try {
             const [data, response] = await CartBD.valCoupon(coupon);
-            console.log(data);
             if(response){
-                //this.#coupon = 'dasdsadasda';
                 this.#coupon = new Coupon(data.couponcode);
             }
-            console.log(this);
             return [data.message, response];
         } catch(e){
             throw e;
         }
     }
 
-    productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount){
+    async productsAddRemoveQtd(productID, quantidade, isIncrease, insertStoreAmount){
         try {
             const productFind = this.#products.findIndex(product => product.id === productID);
             if(productFind == -1){
@@ -56,12 +53,12 @@ class Cart {
                     this.#products[productFind].quantidade -= quantidade;
             }
             if(insertStoreAmount) {
-                const priceProduct = ProductStore.get(productID).price;
-                if(isIncrease)
-                    this.#amount += priceProduct;
-                else 
-                    this.#amount -= priceProduct;
-            }
+                    const priceProduct = await ProductStore.get(productID);
+                    if(isIncrease)
+                        this.#amount += priceProduct.price;
+                    else 
+                        this.#amount -= priceProduct.price;
+            }             
         } catch (e){
             throw e;
         }
@@ -71,7 +68,7 @@ class Cart {
         try {
             const productFind = this.#products.findIndex(product => product.id === productID);
             const quantidade = this.#products[productFind].quantidade;
-            const priceProduct = await ProductStore.get(1)
+            const priceProduct = await ProductStore.get(productID)
             this.#amount -= priceProduct.price*quantidade;
             this.#products.splice(productFind,1);            
         } catch (error) {

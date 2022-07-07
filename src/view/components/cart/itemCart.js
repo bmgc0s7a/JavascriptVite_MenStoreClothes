@@ -8,70 +8,87 @@ import CartStore from "../../../store/CartStore.js";
 function itemCart({ id, quantidade }) {
 
     const divItem = document.createElement('div')
+    divItem._id = id;
     const divProductsImg = document.createElement('div')
-    const divProductsDesc = document.createElement('div')
+    const divProductsDesc = document.createElement('div');
 
-    //console.log(id,quantidade)
+    (async () => {
+        const {title, image, price} = await ProductStore.get(id);
+        divProductsImg.classList.add('pr-8')
+        divProductsImg.append(
+            img(image, ['w-20']))
 
-    //const product=ProductStore.get(1)
+        divProductsDesc.append(
+            p(title, ['text-sm', 'text-slate-600']),
+            p(price+'€', ['font-bold', 'text-xl']))
 
-    divProductsImg.classList.add('pr-8')
-    divProductsImg.append(
-        img('../src/view/images/artigoTeste.jpg', ['w-20']))
+        divProductsDesc.classList.add('flex', 'flex-col', 'self-center')
 
-    divProductsDesc.append(
-        p('H&M', ['text-sm', 'text-slate-600']),
-        p('30€', ['font-bold', 'text-xl']))
+        const ElementsLeft = document.createElement('div')
+        ElementsLeft.classList.add("flex", "flex-row", "nunito", 'p-4')
+        ElementsLeft.append(divProductsImg, divProductsDesc)
 
-    divProductsDesc.classList.add('flex', 'flex-col', 'self-center')
-
-    const ElementsLeft = document.createElement('div')
-    ElementsLeft.classList.add("flex", "flex-row", "nunito", 'p-4')
-    ElementsLeft.append(divProductsImg, divProductsDesc)
-
-    const divActions = document.createElement('div')
-    const less = button('less', '-', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'rounded-l-md', 'text-xl'])
-    const plus = button('plus', '+', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'rounded-r-md', 'text-xl'])
-    const del = buttonIcon('delete', ['fa-solid', 'fa-trash'], '', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'ml-4', 'rounded', 'text-xl'])
-    const qtd = button('quantity', quantidade, ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-y-2', 'border-amber-900', 'py-1', 'px-2', 'text-xl'])
-    qtd.value = quantidade
-    if (qtd.value == 1) {
-        less.disabled = true
-    }
-    less.addEventListener('click', function () {
-        CartStore.addProduct(id, 1, false)
-        qtd.value = qtd.value - 1
-        qtd.textContent = qtd.value
+        const divActions = document.createElement('div')
+        const less = button('less', '-', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'rounded-l-md', 'text-xl'])
+        const plus = button('plus', '+', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'rounded-r-md', 'text-xl'])
+        const del = buttonIcon('delete', ['fa-solid', 'fa-trash'], '', ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-2', 'border-amber-900', 'py-1', 'px-2', 'ml-4', 'rounded', 'text-xl'])
+        const qtd = button('quantity', quantidade, ["bg-amber-300", "hover:bg-amber-900", "text-amber-900", "hover:text-white", 'border-solid', 'border-y-2', 'border-amber-900', 'py-1', 'px-2', 'text-xl'])
+        qtd.value = quantidade
         if (qtd.value == 1) {
             less.disabled = true
         }
-    })
-    plus.addEventListener('click', function () {
-        CartStore.addProduct(id, 1, true)
-        qtd.value = +qtd.value + 1
-        qtd.textContent = qtd.value
-        if (qtd.value > 1) {
-            less.disabled = false
-        }
-        console.log(qtd.value)
-    })
-    del.addEventListener('click', function () {
-        CartStore.delProduct(id)
-    })
 
-    divActions.append(
-        less,
-        qtd,
-        plus,
-        del
-    )
-    divActions.classList.add('self-center', 'text-amber-900', "sm:px-4")
+        del.addEventListener('click', function(e){
+            divItem.remove();
+            document.dispatchEvent(new CustomEvent('verifyItens'))
+        });
 
-    const hr = document.createElement('hr')
-    hr.classList.add('my-2', 'sm:hidden')
+        document.addEventListener('changeQtd', function(e) {
+            if(divItem._id === e.detail){
+                qtd.value = +qtd.value + 1
+                qtd.textContent = qtd.value
+                if (less.disabled) {
+                    less.disabled = false
+                }
+            }
+        })
 
-    divItem.classList.add('flex', "bg-white", 'flex-col', 'justify-center', 'items-center', "sm:flex-row", "sm:justify-between")
-    divItem.append(ElementsLeft, divActions, hr)
+        less.addEventListener('click', function () {
+            CartStore.addProduct(id, 1, false)
+            qtd.value = qtd.value - 1
+            qtd.textContent = qtd.value
+            if (qtd.value == 1) {
+                less.disabled = true
+            }
+        })
+        plus.addEventListener('click', function () {
+            CartStore.addProduct(id, 1, true)
+            qtd.value = +qtd.value + 1
+            qtd.textContent = qtd.value
+            if (qtd.value > 1) {
+                less.disabled = false
+            }
+        })
+        del.addEventListener('click', function () {
+            CartStore.delProduct(id)
+        })
+
+        divActions.append(
+            less,
+            qtd,
+            plus,
+            del
+        )
+        divActions.classList.add('self-center', 'text-amber-900', "sm:px-4")
+
+        const hr = document.createElement('hr')
+        hr.classList.add('my-2', 'sm:hidden')
+
+        divItem.classList.add('flex', "bg-white", 'flex-col', 'justify-center', 'items-center', "sm:flex-row", "sm:justify-between")
+        divItem.append(ElementsLeft, divActions, hr)
+    })()
+
+    
 
     return divItem
 }

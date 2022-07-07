@@ -32,18 +32,35 @@ function cart() {
 
     divTitleItem.append(title(), divItems)
 
+    document.addEventListener('verifyItens', function(e){
+        if(!divItems.childElementCount){
+            divTitleItem.classList.add('hidden')
+            divCouponPayment.classList.add('hidden')
+            empty.classList.remove('hidden')
+        }
+    })
+
     document.addEventListener('cartEmpty', function () {
         divTitleItem.classList.add('hidden')
         divCouponPayment.classList.add('hidden')
         empty.classList.remove('hidden')
-    })
+    });
 
-    document.addEventListener('productAdd', function () {
+    document.addEventListener('productAdd', function (e) {
         if (divTitleItem.classList.contains('hidden')) {
             divTitleItem.classList.remove('hidden')
             divCouponPayment.classList.remove('hidden')
             empty.classList.add('hidden')
         }
+        const [divFind] = [...divItems.childNodes].filter(divProduct => divProduct._id === e.detail);
+        if(divFind)
+            document.dispatchEvent(new CustomEvent('changeQtd',
+             {
+               detail: e.detail
+             }
+            ))
+        else
+            divItems.append(itemCart({id: e.detail, quantidade:1}))
     })
 
     divCart.classList.add('flex', 'flex-col', 'lg:flex-row', 'justify-between');

@@ -10,7 +10,7 @@ function cardShop() {
 
 
     (async () => {
-        const products = await ProductStore.getAll()
+        const products = await ProductStore.getAll(true, 8)
 
         products.forEach(product => {
             const divOneCard = document.createElement('div')

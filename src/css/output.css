@@ -1313,6 +1313,7 @@ video {
   box-shadow:inset 0 0 0 2000px rgba(0, 0, 0,0.7);
 }
 
+<<<<<<< HEAD
 .textLimitTwo {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1337,6 +1338,49 @@ video {
 
 .product .stars div:hover ~ div svg path{
   fill: var(--yellow-500);
+=======
+@-webkit-keyframes leftRight {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0px);
+    opacity: 100;
+  }
+
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0px);
+    opacity: 100;
+  }
+
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+
+.animationWords{
+  -webkit-animation-name: leftRight;
+          animation-name: leftRight;
+  -webkit-animation-duration: 5000ms;
+          animation-duration: 5000ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+>>>>>>> feature/componentSlogan
 }
 
 .imageCard img{

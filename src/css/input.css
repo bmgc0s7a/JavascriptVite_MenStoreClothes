@@ -54,3 +54,22 @@
 .imageCard:hover img{
   transform: scale(1.1);
 } 
+@keyframes leftRight {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 100;
+  }
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+.animationWords{
+  animation-name: leftRight;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+}

@@ -21,7 +21,7 @@ const coupon = function(){
         if(inputCoupon){
             (async ()=>{
                 try{
-                    console.log(await CartStore.addCoupon(inputCoupon));
+                    await CartStore.addCoupon(inputCoupon);
                 } catch (e){
                     console.error(e);
                 }

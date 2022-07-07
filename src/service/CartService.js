@@ -32,11 +32,7 @@ class CartService {
 
     static payment(cartObj){
         try {
-            const CartObjPayment = [];
-            if(cartObj.coupon) CartObjPayment.coupon = cartObj.coupon.code;
-            CartObjPayment.amout = cartObj.amout;
-            CartObjPayment.products = cartObj.products;
-            return PaymentAPI.send(CartObjPayment);
+            return PaymentAPI.send(cartObj);
         } catch (error) {
             throw error
         }

@@ -42,7 +42,7 @@ class CartBD {
     }
 
     static payment(cartInstance){
-        const CartObj = CartJSON.convert(cartInstance);
+        const CartObj = CartJSON.convertAPI(cartInstance);
         return CartService.payment(CartObj);
     }
 }

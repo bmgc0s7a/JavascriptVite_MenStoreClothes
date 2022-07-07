@@ -33,8 +33,7 @@ class CartStore {
                     ))
                     return this.#cartStore;
                 } catch (e) {
-                    // return false;
-                    console.log(e);
+                    return false;
                 }
             } else {
                 return this.#cartStore

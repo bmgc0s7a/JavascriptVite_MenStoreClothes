@@ -8,7 +8,7 @@ const divEmptyCart = function () {
 
     divEmptyCart.append( 
         icon(['fa-solid', 'fa-cart-arrow-down', "text-5xl"]),
-        h1('Your cart is empty!')
+        h1('Your cart is empty!', ['flex', 'justify-center'])
        
     )
 

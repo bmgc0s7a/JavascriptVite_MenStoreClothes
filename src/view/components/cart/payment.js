@@ -2,13 +2,11 @@ import { p } from "../widgets/p.js";
 import { button } from "../widgets/button.js";
 import {icon } from "../widgets/icon.js";
 import CartStore from "../../../store/CartStore.js";
-import { messageToUser } from "../public/messageToUser.js";
-import CartBD from "../../../model/cart/CartBD.js";
+import { purchaseBtnFormPay } from "./events/purchaseBtnFormPay.js";
 
 
 function payment() {
     const divPayment = document.createElement("div");
-
     const divPaymentText = document.createElement("div");
     const divPaymentLogos = document.createElement("div");
     divPaymentText.classList.add("grid","grid-cols-2","gap-x-12");
@@ -22,17 +20,7 @@ function payment() {
     const purchaseButton = button('Purchase', 'Make Purchase', ["bg-amber-300", "hover:bg-amber-900","text-amber-900","hover:text-white","hover:cursor-pointer", "rounded-md" , "border-2", "border-amber-900", "placeholder-black", "py-2", "px-10", "placeholder-opacity-50","col-span-2"]);
 
     purchaseButton.addEventListener('click', () => {
-        try {
-            (async () => {
-                const [_, status] = await CartStore.payment();
-                messageToUser('Thank you for your purchase!', (status) ?? 'success');
-                CartBD.delete();
-                document.dispatchEvent(new Event('cartEmpty'));
-
-            })()
-        } catch (error) {
-            messageToUser('Fail')
-        }
+      purchaseBtnFormPay()
     });
 
     document.addEventListener('updatedPrices', (e) =>{

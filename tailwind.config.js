@@ -13,6 +13,10 @@ module.exports = {
       },
       translate: {
         '-2/4': '-50%',
+      },
+      gridTemplateRows: {
+        // Complex site-specific row configuration
+        'layout': 'auto 1fr auto',
       }
     }
   },

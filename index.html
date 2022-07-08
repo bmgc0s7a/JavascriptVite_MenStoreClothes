@@ -8,7 +8,7 @@
   <title>BOTIQUE BUSHIDO</title>
 </head>
 
-<body>
+<body class="grid grid-rows-layout min-h-screen">
   <div class="bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
     <ul id="menu" class="fixed z-50 left-2/4 -translate-x-2/4 bottom-10 bg-amber-800 flex p-4 gap-6 rounded-xl lg:relative lg:bottom-auto lg:p-0 lg:translate-x-0 lg:left-0">
       <li id="shopMenu" class="text-2xl flex gap-2 text-amber-100  hover:text-amber-300 ease-in duration-150 cursor-pointer">
@@ -33,9 +33,9 @@
       <a href="#"> <i class="fa-solid fa-square-rss hover:text-amber-300 ease-in duration-150"></i> </a>
     </div>
   </div>
-  <div id="app">
-    <div id="shop" class="flex flex-col items-center pl-8 pr-8 pt-2 bg-amber-100"></div>
-    <div id="aboutUs" class="hidden h-auto scroll-auto sm:scroll-smooth bg-gradient-to-b from-amber-800 to-amber-100 px-20">
+  <div id="app" class="min-h-full">
+    <div id="shop" class="flex flex-col items-center pl-8 pr-8 pt-2 bg-amber-100 min-h-full"></div>
+    <div id="aboutUs" class="hidden h-auto scroll-auto sm:scroll-smooth bg-gradient-to-b from-amber-800 to-amber-100 px-20 min-h-full">
       <h1 class="font-kaushan py-14 text-2xl text-center sm:text-3xl ">About us</h1>
       <div class="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         <div class="mx-auto bg-white rounded-xl shadow-md overflow-hidden">
@@ -182,8 +182,8 @@
         </div>
       </div>
     </div>
-    <div id="contact" class="hidden"></div>
-    <div id="cart" class="hidden bg-amber-100 p-6 text-xl xl:py-16 xl:px-28 " ></div>
+    <div id="contact" class="hidden min-h-full bg-amber-100"></div>
+    <div id="cart" class="hidden bg-amber-100 p-6 text-xl xl:py-16 xl:px-28 min-h-full" ></div>
   </div>
   <div class="footer bg-amber-800 flex justify-center sm:justify-between py-4 px-16 items-center">
     <div class="logo-footer none hidden sm:block">

@@ -5,8 +5,9 @@ import CartBD from "../../../../model/cart/CartBD.js";
 const purchaseBtnFormPay = function(){
     try {
         (async () => {
-            const [_, status] = await CartStore.payment();
-            messageToUser('Thank you for your purchase!', (status) ?? 'success');
+            const [message, status] = await CartStore.payment();
+            console.log(message)
+            messageToUser(message.message, (status) ?? 'success', 2000);
             CartBD.delete();
             document.dispatchEvent(new Event('cartEmpty'));
         })()

@@ -3,6 +3,7 @@ import inputIsEmpty from "../../../validators/view/forms/inputIsEmpty.js";
 import { messageToUser } from "../public/messageToUser.js";
 import { input } from "../widgets/input.js";
 import { textarea } from "../widgets/textarea.js";
+import { submitFormContactUs } from "./events/submitFormContacUs.js";
 
 
 const formContactUs = function(){
@@ -16,29 +17,8 @@ const formContactUs = function(){
     );
 
     form.addEventListener('submit', function(e){
-        try {
-            e.preventDefault()
-            const formObj = {};
-            const inputText = [...e.target.children].filter(input=>input.type!='submit')
-            inputText.forEach(input=> {
-                inputIsEmpty.exec(input.name, input.value)
-                formObj[input.name] = input.value;
-                input.value=''
-            });
-            (async () => {
-                try {
-                     const [message, status] = await FromContactService.send(formObj);
-                messageToUser(message.message, status ? 'success': 'error');
-                } catch (error) {
-                    messageToUser('Something went wrong! Please try again.')
-                }
-               
-            })();
-        } catch (error) {
-            messageToUser(error);
-        }
-           
-        })
+        submitFormContactUs(e);     
+    })
 
     return form
 }

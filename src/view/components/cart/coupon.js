@@ -3,6 +3,7 @@ import { p } from "../widgets/p.js";
 import { button } from "../widgets/button.js";
 import CartStore from "../../../store/CartStore.js";
 import { messageToUser } from "../public/messageToUser.js";
+import { submitFormCoupon } from "./events/submitFormCoupon.js";
 
 const coupon = function(){
     const divCoupon = document.createElement("div");
@@ -17,24 +18,7 @@ const coupon = function(){
     );
 
     form.addEventListener('submit', function(e){
-        e.preventDefault();
-        const inputCoupon = e.target.childNodes[0].value;
-        if(inputCoupon){
-            (async ()=>{
-                try{
-                    await CartStore.addCoupon(inputCoupon);
-                    messageToUser(`Coupon applied with success` ,'success',900)
-                    const [_,couponResponse] = await CartStore.addCoupon(inputCoupon);
-                    if(couponResponse)
-                        messageToUser(`Coupon applied with success` ,'success',900)
-                    else 
-                        messageToUser(`Invalid coupon` ,'error',900)
-                } catch (e){
-                    console.error(e);
-                    messageToUser(`Invalid coupon` ,'error',900)
-                }
-            })()
-        }
+        submitFormCoupon(e)
     })
 
     divForm.classList.add('flex', "flex-row")

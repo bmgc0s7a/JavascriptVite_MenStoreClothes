@@ -1,0 +1,1 @@
+export const removeDiv = (div) => div.remove();

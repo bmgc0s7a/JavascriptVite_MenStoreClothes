@@ -7,13 +7,32 @@ import { divEmptyCart } from "./EmptyCart.js";
 
 
 function cart() {
-    
+
 
     const divCart = document.createElement("div");
     const divTitleItem = document.createElement("div");
     const divCouponPayment = document.createElement("div");
     const divItems = document.createElement("div");
     const itemsDB = CartStore.get()
+
+    const hideItems = function (isHidden = true) {
+        if (isHidden) {
+            divTitleItem.classList.add('hidden')
+            divCouponPayment.classList.add('hidden')
+            divCartEmpty.classList.remove('hidden')
+            divCart.classList.remove('justify-between')
+            divCart.classList.add('justify-center')
+        }
+        else {
+            if (divTitleItem.classList.contains('hidden')) {
+                divTitleItem.classList.remove('hidden')
+                divCouponPayment.classList.remove('hidden')
+                divCartEmpty.classList.add('hidden')
+                divCart.classList.add('justify-between')
+                divCart.classList.remove('justify-center')
+            }
+        }
+    }
 
     divCart.classList.add('flex', 'flex-col', 'lg:flex-row', 'justify-between');
 
@@ -22,10 +41,7 @@ function cart() {
     divCouponPayment.append(coupon(), payment());
     divCart.append(divCartEmpty)
     if (!itemsDB) {
-        divTitleItem.classList.add('hidden')
-        divCouponPayment.classList.add('hidden')
-        divCart.classList.remove('justify-between')
-        divCart.classList.add('justify-center')
+        hideItems()
 
     } else {
         divCartEmpty.classList.add('hidden')
@@ -38,44 +54,31 @@ function cart() {
 
     divTitleItem.append(title(), divItems)
 
-    document.addEventListener('verifyItens', function(e){
-        if(!divItems.childElementCount){
-            divTitleItem.classList.add('hidden')
-            divCouponPayment.classList.add('hidden')
-            divCartEmpty.classList.remove('hidden')
-            divCart.classList.remove('justify-between')
-        divCart.classList.add('justify-center')
+    document.addEventListener('verifyItens', function (e) {
+        if (!divItems.childElementCount) {
+            hideItems()
         }
     })
 
     document.addEventListener('cartEmpty', function () {
-        divTitleItem.classList.add('hidden')
-        divCouponPayment.classList.add('hidden')
-        divCartEmpty.classList.remove('hidden')
-        divCart.classList.remove('justify-between')
-        divCart.classList.add('justify-center')
+        hideItems()
     });
 
     document.addEventListener('productAdd', function (e) {
-        if (divTitleItem.classList.contains('hidden')) {
-            divTitleItem.classList.remove('hidden')
-            divCouponPayment.classList.remove('hidden')
-            divCartEmpty.classList.add('hidden')
-            divCart.classList.add('justify-between')
-        divCart.classList.remove('justify-center')
-        }
+        hideItems(false)
+
         const [divFind] = [...divItems.childNodes].filter(divProduct => divProduct._id === e.detail);
-        if(divFind)
+        if (divFind)
             document.dispatchEvent(new CustomEvent('changeQtd',
-             {
-               detail: e.detail
-             }
+                {
+                    detail: e.detail
+                }
             ))
         else
-            divItems.append(itemCart({id: e.detail, quantidade:1}))
+            divItems.append(itemCart({ id: e.detail, quantidade: 1 }))
     })
 
-    
+
     divCart.append(divTitleItem, divCouponPayment)
 
     return divCart;
